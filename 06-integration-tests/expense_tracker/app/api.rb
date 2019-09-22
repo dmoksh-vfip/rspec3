@@ -10,6 +10,7 @@ module  ExpenseTracker
       super()
     end
     post '/expenses' do
+      binding.pry
       expense = JSON.parse(request.body.read)
       result = @ledger.record(expense)
       if result.success?
@@ -20,7 +21,7 @@ module  ExpenseTracker
       end
     end
     get '/expenses/:date' do
-      JSON.generate([])
+      JSON.generate(@ledger.expenses_on(params[:date]))
     end
 
   end

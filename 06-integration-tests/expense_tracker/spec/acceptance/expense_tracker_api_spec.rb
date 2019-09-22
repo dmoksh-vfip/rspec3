@@ -15,16 +15,15 @@ module ExpenseTracker
       expense.merge('id' => parsed['expense_id'])
     end
     it 'record submitted expenses' do
-      pending 'Need to persist expenses'
       coffee = post_expense(
-        'payee': 'starbucks',
-        'amount': 5.75,
-        'date': '2014-10-17', 
+        'payee' => 'starbucks',
+        'amount'=> 5.75,
+        'date' => '2014-10-17', 
       )
       zoo = post_expense(
-        'payee': 'Zoo',
-        'amount': 15.25,
-        'date': '2014-10-17'
+        'payee' => 'Zoo',
+        'amount' => 15.25,
+        'date'=> '2014-10-17'
       )
       groceries = post_expense(
         'payee': 'Whole Foods',
